@@ -20,6 +20,7 @@ class Admin extends Seeder
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'is_admin' => 1,
         ]);
     }
 }
