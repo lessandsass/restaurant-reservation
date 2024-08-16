@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-slate-700">
         <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
 
             <div @click.away="open = false" class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-slate-100 md:w-64 dark:text-gray-200 dark:bg-gray-800" x-data="{ open: false }">
@@ -86,7 +86,7 @@
 
             </div>
 
-            <main class="m-2 p-8">
+            <main class="m-2 p-8 w-full">
                 {{ $slot }}
             </main>
 
