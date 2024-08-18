@@ -46,9 +46,9 @@
                                 <input type="file" id="image" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-slate-600 border border-gray-400 rounded-md py-2 px-3 text-base text-white leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
                             @error('image')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
-                            </div>
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -86,7 +86,7 @@
                                     name="categories[]"
                                 >
                                     @foreach($categories as $category)
-                                        <option value="">
+                                        <option value="{{ $category->id }}" class="inline-block">
                                             {{ $category->name }}
                                         </option>
                                     @endforeach
