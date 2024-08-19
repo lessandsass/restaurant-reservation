@@ -47,7 +47,7 @@
                             <div>
                                 <img
                                     src="{{ Storage::url($category->image) }}"
-                                     alt="image"
+                                    alt="image"
                                     class="w-32"
                                 >
                             </div>

@@ -7,6 +7,7 @@ use App\Http\Requests\MenuStoreRequest;
 use App\Models\Category;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -41,19 +42,40 @@ class MenuController extends Controller
 
     }
 
-    public function show(string $id)
+    public function edit(Menu $menu)
     {
-        //
+        $categories = Category::all();
+        return view('admin.menus.edit', compact('menu', 'categories'));
     }
 
-    public function edit(string $id)
+    public function update(Request $request, Menu $menu)
     {
-        //
-    }
 
-    public function update(Request $request, string $id)
-    {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $image = $menu->image;
+
+        if ($request->hasFile('image')) {
+            Storage::delete($menu->image);
+            $image = $request->file('image')->store('public/menus');
+        }
+
+        $menu->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $image,
+            'price' => $request->price,
+        ]);
+
+        if ($request->has('categories')) {
+            $menu->categories()->sync($request->categories);
+        }
+
+        return to_route('admin.menus.index');
     }
 
     public function destroy(string $id)
