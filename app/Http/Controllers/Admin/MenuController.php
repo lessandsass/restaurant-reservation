@@ -78,8 +78,10 @@ class MenuController extends Controller
         return to_route('admin.menus.index');
     }
 
-    public function destroy(string $id)
+    public function destroy(Menu $menu)
     {
-        //
+        Storage::delete($menu->image);
+        $menu->delete();
+        return to_route('admin.menus.index');
     }
 }
