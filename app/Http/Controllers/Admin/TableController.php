@@ -33,23 +33,20 @@ class TableController extends Controller
 
     }
 
-    public function show(string $id)
+    public function edit(Table $table)
     {
-        //
+        return view('admin.tables.edit', compact('table'));
     }
 
-    public function edit(string $id)
+    public function update(TableStoreRequest $request, Table $table)
     {
-        //
+        $table->update($request->validated());
+        return to_route('admin.tables.index');
     }
 
-    public function update(Request $request, string $id)
+    public function destroy(Table $table)
     {
-        //
-    }
-
-    public function destroy(string $id)
-    {
-        //
+        $table->delete();
+        return to_route('admin.tables.index');
     }
 }

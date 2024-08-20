@@ -35,6 +35,9 @@
                             <th scope="col" class="px-6 py-3">
                                 Location
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                Edit / Delete
+                            </th>
                         </tr>
                     </thead>
 
@@ -54,6 +57,29 @@
                             <td class="px-6 py-4">
                                 {{ $table->location->name }}
                             </td>
+
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-between">
+                                <a
+                                    href="{{ route('admin.tables.edit', $table->id) }}"
+                                    class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg"
+                                >
+                                    Edit
+                                </a>
+
+                                <form
+                                    action="{{ route('admin.tables.destroy', $table->id) }}"
+                                    method="POST"
+                                    onsubmit="return confirm('Are you sure?');"
+                                    class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg"
+                                >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+
                         </tr>
 
                     @endforeach
