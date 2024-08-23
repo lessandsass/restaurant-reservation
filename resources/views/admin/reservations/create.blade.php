@@ -115,9 +115,9 @@
                             </div>
 
                             @error('res_date')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
-                            </div>
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -128,9 +128,9 @@
                             </div>
 
                             @error('guest_number')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
-                            </div>
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -152,6 +152,11 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @error('table_id')
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="sm:col-span-6 mt-5">
