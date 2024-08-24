@@ -68,7 +68,7 @@
                             <button type="submit"
                                 class="px-4 py-2 bg-indigo-600 hover:bg-indigo-800 rounded-lg"
                             >
-                                Store
+                                Update Category
                             </button>
                         </div>
 
