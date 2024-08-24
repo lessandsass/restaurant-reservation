@@ -139,6 +139,7 @@
 {{--                        <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.--}}
 {{--                    </div>--}}
 
+                    
                 </div>
 
                 {{ $slot }}
