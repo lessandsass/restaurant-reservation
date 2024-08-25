@@ -106,12 +106,16 @@
                             <label for="res_date" class="block text-sm font-medium text-gray-300"> Reservation Date </label>
 
                             <div class="mt-1">
+
                                 <input
                                     type="datetime-local"
-                                    id="res_date"
                                     name="res_date"
+                                    min="2024-06-14 00:00:00"
+                                    max="2034-06-16 00:00:00"
+                                    id="res_date"
                                     class="block w-full transition duration-150 ease-in-out appearance-none bg-slate-600 border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                                 />
+
                             </div>
 
                             @error('res_date')
@@ -148,6 +152,7 @@
                                             class="inline-block"
                                         >
                                             {{ $table->name }}
+                                            ({{ $table->guest_number }} Guests)
                                         </option>
                                     @endforeach
                                 </select>
