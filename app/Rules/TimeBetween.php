@@ -26,6 +26,5 @@ class TimeBetween implements ValidationRule
         } else {
             $fail('Please choose a time between 17:00 and 23:00');
         }
-
     }
 }

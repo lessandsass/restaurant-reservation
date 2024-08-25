@@ -23,6 +23,13 @@ class Reservation extends Model
         'res_date'
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'res_date' => 'date',
+        ];
+    }
+
     public function table()
     {
         return $this->belongsTo(Table::class);
