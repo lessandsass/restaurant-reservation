@@ -49,3 +49,6 @@ Route::get('/tables', [FrontendTableController::class, 'index'])->name('tables.i
 Route::get('/tables/{table}', [FrontendTableController::class, 'show'])->name('tables.show');
 
 require __DIR__.'/auth.php';
+
+
+
