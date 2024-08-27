@@ -6,7 +6,7 @@
 
 {{--    <x-about-us></x-about-us>--}}
 
-    <x-today-special></x-today-special>
+{{--    <x-today-special :categories="$categories"></x-today-special>--}}
 
 {{--    <x-food-gallery></x-food-gallery>--}}
 
