@@ -26,7 +26,7 @@ class Reservation extends Model
     protected function casts(): array
     {
         return [
-            'res_date' => 'date',
+            'res_date' => 'datetime',
         ];
     }
 

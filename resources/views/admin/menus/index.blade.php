@@ -62,26 +62,27 @@
                                 </td>
 
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-between">
-                                    <a
-                                        href="{{ route('admin.menus.edit', $menu->id) }}"
-                                        class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg"
-                                    >
-                                        Edit
-                                    </a>
+                                    <div class="flex space-x-2">
+                                        <a
+                                            href="{{ route('admin.menus.edit', $menu->id) }}"
+                                            class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg"
+                                        >
+                                            Edit
+                                        </a>
 
-                                    <form
-                                        action="{{ route('admin.menus.destroy', $menu->id) }}"
-                                        method="POST"
-                                        onsubmit="return confirm('Are you sure?');"
-                                        class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg"
-                                    >
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit">
-                                            Delete
-                                        </button>
-                                    </form>
-
+                                        <form
+                                            action="{{ route('admin.menus.destroy', $menu->id) }}"
+                                            method="POST"
+                                            onsubmit="return confirm('Are you sure?');"
+                                            class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg"
+                                        >
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
 
                             </tr>
