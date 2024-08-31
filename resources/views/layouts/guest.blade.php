@@ -18,7 +18,7 @@
 
         <x-main-nav></x-main-nav>
 
-        <div class="font-sans text-gray-900 antialiased min-h-screen mt-6 pt-6 h-screen">
+        <div class="font-sans text-gray-900 antialiased min-h-screen">
             {{ $slot }}
         </div>
 
