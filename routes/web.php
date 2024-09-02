@@ -44,6 +44,7 @@ Route::get('/reservation/step-one', [FrontendReservationController::class, 'step
 Route::post('/reservation/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservations.store.step.one');
 Route::get('/reservation/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
 Route::post('/reservation/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
+Route::get('/thanks', [WelcomeController::class, 'thanks'])->name('thanks');
 
 Route::get('/tables', [FrontendTableController::class, 'index'])->name('tables.index');
 Route::get('/tables/{table}', [FrontendTableController::class, 'show'])->name('tables.show');

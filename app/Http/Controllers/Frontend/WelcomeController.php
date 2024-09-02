@@ -13,4 +13,10 @@ class WelcomeController extends Controller
         $specials = Category::where('name', 'specials')->first();
         return view('welcome', compact('specials'));
     }
+
+    public function thanks()
+    {
+        return view('thanks');
+    }
+
 }
